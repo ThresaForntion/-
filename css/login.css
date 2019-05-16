@@ -1,0 +1,39 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+header {
+	width: 100%;
+	height: 100px;
+	line-height: 100px;
+}
+.title{
+	position: relative;
+	width: 845px;
+	margin: 0 auto;
+	top: 30px;
+}
+.title h2{
+	position: absolute;
+	top: -29px;
+	display: inline-block;
+	font-size: 31px;
+	font-family:黑体;
+	font-weight:normal ;
+}
+.title span{
+	font-size: 1px;
+}
+main{
+	background-color: rgb(244, 247, 254)
+}
+.imgs{
+	height: 453px;
+	position: relative;
+	left: 239px;;
+}
+.login{
+	width: 410px;
+	background-color: white ;
+}

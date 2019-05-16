@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>小米登录</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		header {
+			width: 100%;
+			height: 100px;
+			line-height: 100px;
+		}
+
+		.title {
+			position: relative;
+			width: 845px;
+			margin: 0 auto;
+			top: 30px;
+		}
+
+		.title h2 {
+			position: absolute;
+			top: -29px;
+			display: inline-block;
+			font-size: 31px;
+			font-family: 黑体;
+			font-weight: normal;
+		}
+
+		.title span {
+			font-size: 9px;
+		}
+
+		main {
+			background-color: rgb(244, 247, 254);
+			position: relative;
+		}
+
+		.imgs {
+			height: 453px;
+			position: relative;
+			left: 239px;
+			;
+		}
+
+		.lognin {
+			width: 350px;
+			position: absolute;
+			margin: 0 auto;
+			right: 249px;
+			top: 21px;
+			background-color: white;
+			height: 436px;
+		}
+
+		.choose {
+			position: relative;
+		}
+
+		.choose p {
+			display: inline-block;
+			font-size: 24px;
+			margin: 26px 37px;
+			width: 137px;
+			text-align: center;
+		}
+
+		.choose p:hover {
+			color: #f56600;
+		}
+
+		.choose p:nth-of-type(1) {
+			/* position: absolute; */
+			color: #f56600;
+			cursor: pointer;
+			border-right: 1px #d8d8d8 solid;
+		}
+
+		.choose p:nth-of-type(2) {
+			position: absolute;
+			/* color: #f56600; */
+			cursor: pointer;
+			right: 0;
+			border-left: 1px #d8d8d8 solid;
+			margin-left: 10px;
+		}
+
+		/* .choose p:nth-of-type(1):target #account{
+				display: block;
+			
+			}
+			.choose p:nth-of-type(2):target #ThinkChange{
+				display: block;
+				
+			}
+			#mail:target #Mobile{
+				display: block;
+				
+			} */
+		.territory {
+			border: 1px solid #A9A9A9;
+			height: 44px;
+			width: 53px;
+			position: relative;
+			display: inline-block;
+			left: 29px;
+			text-align: center;
+			line-height: 44px;
+		}
+
+		/* 谷歌 */
+		input::-webkit-outer-spin-button,
+		input::-webkit-inner-spin-button {
+			-webkit-appearance: none;
+			appearance: none;
+			margin: 0;
+		}
+
+		/* 火狐 */
+		input {
+			-moz-appearance: textfield;
+		}
+
+		.loginArea {
+			background-color: #fff;
+			position: relative;
+		}
+
+		.loginArea input {
+
+
+			height: 42px;
+			;
+		}
+
+		/* #account{
+			display: none;
+		} */
+		#ThinkChange{
+			display: none;
+		} 
+		#Mobile{
+			display: none;
+		} 
+		#userName {
+			width: 293px;
+			position: absolute;
+			left: 29px;
+			top: 0px;
+			;
+		}
+
+		#psd {
+			width: 293px;
+			position: absolute;
+			left: 29px;
+			top: 60px;
+
+		}
+
+		#sub {
+
+			width: 293px;
+			margin-top: -20px;
+			background-color: #ff6700;
+			border: none;
+			height: 42px;
+			position: absolute;
+			bottom: 174px;
+			left: 29px;
+		}
+
+		#mail {
+			font-size: 10px;
+			position: absolute;
+			bottom: 156px;
+			left: 27px;
+		}
+
+		.seccode {
+			display: inline-block;
+			border: 1px solid #A9A9A9;
+			width: 108px;
+			height: 44px;
+			line-height: 44px;
+			position: relative;
+			top: 14px;
+			left: 218px;
+			text-align: center;
+		}
+
+		.seccode a {
+			text-decoration: none;
+			outline: none;
+			color: #0072CF;
+			font-size: 13px;
+		}
+
+		.choLogin {
+			font-size: 10px;
+			position: absolute;
+			bottom: 156px;
+			right: 27px;
+		}
+
+		.choLogin:hover {
+			color: #d32f2f;
+		}
+
+		#mail,
+		.choLogin a {
+			outline: none;
+			text-decoration: none;
+			color: black;
+		}
+
+		.ther {
+			position: relative;
+			top: 238px;
+			width: 78px;
+			left: 132px;
+			font-size: 13px;
+			display: inline-block;
+			z-index: 1;
+		}
+
+		/* #other {
+			position: relative;
+			top: 238px;
+			width: 78px;
+			left: 132px;
+			font-size: 13px;
+			display: inline-block;
+			background: white;
+			
+		} */
+
+		#hr {
+			position: relative;
+			top: 229px;
+			width: 314px;
+			left: 20px;
+			/* color: #d8d8d8; */
+		}
+
+		#hr {
+			/* color: #d8d8d8; */
+			border-bottom: 1px solid #a8a8a8;
+			opacity: 0.5;
+		}
+
+		.third {
+			position: relative;
+			bottom: -253px;
+			display: inline-block;
+			left: 57px;
+		}
+
+		.third div div {
+			display: inline-block;
+			width: 18px;
+			height: 18px;
+			background-image: url("https://account.xiaomi.com/static/res/166d6dc/account-static/respassport/acc-2014/img/icons_type.png");
+			text-indent: -99999px;
+			/*首行缩进*/
+			border-radius: 50%;
+
+		}
+
+		.third div {
+			display: inline-block;
+			width: 28px;
+			height: 28px;
+			line-height: 28px;
+
+			border-radius: 50%;
+		}
+
+		.qq_contain {
+			margin: 12px 12px;
+			background-color: #0288d1;
+		}
+
+		.qq {
+			background-position: -19px 0;
+			margin: 5px 5px;
+		}
+
+		.weibo-contain {
+			background-color: #d32f2f;
+			margin: 12px 12px;
+		}
+
+		.weibo {
+			margin: 5px 5px;
+			background-position: -38px 0;
+		}
+
+		.zfb-contain {
+			background-color: #0ae;
+			margin: 12px 12px;
+		}
+
+		.zfb {
+			margin: 5px 5px;
+			background-position: -57px 0;
+		}
+
+		.weixin-contain {
+			background-color: #00d20d;
+			margin: 12px 12px;
+		}
+
+		.weixin {
+			margin: 5px 5px;
+			background-position: -84px 0;
+		}
+
+		footer img {
+			position: relative;
+			bottom: -52px;
+			left: 389px;
+		}
+	</style>
+
+</head>
+
+<body>
+	<header>
+		<div class="title">
+			<img src="img/MI.png" alt="">
+			<h2>小米商城</h2>
+			<span>让每个人都能感受到科技的乐趣</span>
+		</div>
+
+	</header>
+	<main>
+		<img class="imgs" src="img/3.png" alt="">
+		<div class="choose">
+				<p id="zhdl">账号登录</p>
+				<p id="smdl">扫码登陆</p>
+			</div>
+		<!-- 账号登录 -->
+		<div id="account" class="lognin">
+			
+			<div class="loginArea">
+				<input id="userName" type="number" autocomplete="off" placeholder="邮箱/手机/小米ID"><br style="z-index:-1;">
+				<input id="psd" type="number" autocomplete="off" placeholder="密码">
+			</div>
+
+			<input id="sub" type="submit" value="登录" style="color:white">
+			<a id="mail" href="javascript:void(0);" style="color:#d32f2f">手机短信登录/注册</a>
+			<div class="choLogin">
+				<a href="登录.html">立即注册</a>|
+				<a href="">忘记密码</a>
+			</div>
+			<div class="ther">
+				<p id="other" style="color:#d8d8d8">其他登录方式</p>
+			</div>
+
+			<div id="hr">
+
+			</div>
+
+			<div class="third">
+				<div class="qq_contain">
+					<div class="qq">QQ</div>
+				</div>
+				<div class="weibo-contain">
+					<div class="weibo">微博</div>
+				</div>
+				<div class="zfb-contain">
+					<div class="zfb">支付宝</div>
+				</div>
+
+				<div class="weixin-contain">
+					<div class="weixin">微信</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div id="ThinkChange" class="lognin">
+			<div class="choose">
+				<p id="zhdl">账号登录</p>
+				<p id="smdl">扫码登陆</p>
+			</div>
+			<img src="img/二维码.png" alt="二维码登录" srcset="" style="position:absolute;z-index:10000">
+		</div>
+
+		<div id="Mobile" class="lognin">
+			<div class="choose">
+				<p id="zhdl">账号登录</p>
+				<p id="smdl">扫码登陆</p>
+			</div>
+			<div class="loginArea">
+				<div class="territory">
+					<div style="color:#636e72;">+86</div>
+				</div>
+				<input id="userName" type="number" autocomplete="off" placeholder="手机号码" style="width: 240px;
+				position: absolute;left: 82px;top: 0px;"><br>
+				<input id="psd" type="number" autocomplete="off" placeholder="密码" style="width:186px;">
+				<div class="seccode"><a href="">获取验证码</a></div>
+
+			</div>
+
+			<input id="sub" type="submit" value="登录" style="color:white">
+			<a id="mail" href="javascript:void(0);" style="color:#d32f2f">用户名密码登录</a>
+
+			<p id="other" style="color:#d8d8d8;top: 151px;">其他登录方式</p>
+
+			<div id="hr" style="top:142px">
+				<hr>
+			</div>
+
+			<div class="third" style="bottom:-153px;">
+				<div class="qq_contain">
+					<div class="qq">QQ</div>
+				</div>
+				<div class="weibo-contain">
+					<div class="weibo">微博</div>
+				</div>
+				<div class="zfb-contain">
+					<div class="zfb">支付宝</div>
+				</div>
+
+				<div class="weixin-contain">
+					<div class="weixin">微信</div>
+				</div>
+
+			</div>
+		</div>
+	</main>
+	<footer>
+		<img src="img/外链.png" alt="">
+	</footer>
+	<script>
+		(
+			function (w, d) {
+				var account = d.getElementById('account')
+				var
+				var ThinkChangediv = d.getElementById("smdl");
+				var ThinkChangedivs = ThinkChangediv.addEventListener("click", function () {
+					account.style.display = "none";
+					ThinkChange.style.display = "block";
+
+				})
+
+				var accountdiv = d.getElementById("zhdl");
+				var accountdivs = accountdiv.addEventListener("click", function () {
+					account.style.display = "block";
+					ThinkChange.style.display = "none";
+
+				})
+
+				// var ThinkChangeText = "<div id='ThinkChange' class='lognin'><div class='choose'><p id='zhdl'>账号登录</p><p id='smdl'>扫码登陆</p></div><img src='img/二维码.png'  style='position:absolute;z-index:10000'></div>"
+				// var accountText = "<div id='Mobile' class='lognin'><div class='choose'><p id='zhdl'>账号登录</p><p id='smdl'>扫码登陆</p></div><div class='loginArea'><div class='territory'><div style='color:#636e72;'>+86</div></div><input id='userName' type='number' autocomplete='off' placeholder='手机号码' style='width: 240px;position: absolute;left: 82px;top: 0px;'><br><input id='psd' type='number' autocomplete='off' placeholder='密码 'style='width:186px;'>
+				// 	+ "<div class='seccode'><a href=''>获取验证码</a><	/div></div><input id='sub' type='submit' value='登录' style='color:white'>"
+				// 	+ "<a id='mail' href='javascript:void(0);' style='color:#d32f2f'>用户名密码登录</a><p id='other' style='color:#d8d8d8;top: 151px;'>其他登录方式</p>"
+				// 	+ "<div id='hr 'style='top:142px'><hr></div><div class='third' style='bottom:-153px;'><div class='qq_contain'><div class='qq'>QQ</div></div><div class='weibo-contain'>"
+				// 	+ "<div class='weibo'>微博</div></div><div class='zfb-contain'><div class='zfb'>支付宝</div></div><div class='weixin-contain'><div class='weixin'>微信</div></div></div></div>"
+				// var main = d.getElementsByTagName("main");
+
+				// var ThinkChangediv = d.getElementById("smdl");
+				// var ThinkChangedivs = ThinkChangediv.addEventListener("click", function () {
+				// 	mainz.innerHTML = ThinkChangeText;
+
+				// })
+
+				// var accountdiv = d.getElementById("zhdl");
+				// var accountdivs = accountdiv.addEventListener("click", function () {
+				// 	account.innerHTML = accountText;
+				// })
+
+
+
+				// document.getElementById("sub").onclick=function(){document.getElementById("sub").innerText="动态添加事件";};
+			}
+		)(window, document);
+	</script>
+</body>
+
+</html>
